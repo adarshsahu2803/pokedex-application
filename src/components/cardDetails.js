@@ -20,13 +20,8 @@ const CardDetails = ({ pokemonId }) => {
         fetchPokemonStats();
     }, [pokemonId]);
 
-    function closeComponent() {
-        console.log("close")
-        return
-    }
-
     return (
-        <div className="modal-overlay" onClick={closeComponent}>
+        <div className="modal-overlay">
             <div className="modal">
                 <h2>{pokemonName} stats</h2>
                 <div className="stats-container">

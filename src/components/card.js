@@ -5,7 +5,7 @@ import CardDetails from './CardDetails';
 
 const Card = ({ pokemonId }) => {
   const [pokemonData, setPokemonData] = useState(null);
-  const [showDetails, setShowDetails] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,16 +20,12 @@ const Card = ({ pokemonId }) => {
     fetchData();
   }, [pokemonId]);
 
-  const handleCardClick = () => {
-    setShowDetails(true);
-  };
-
-  const handleCloseDetails = () => {
-    setShowDetails(false);
-  };
+  const handleClick = () => {
+    setIsVisible(!isVisible);
+  }
 
   return (
-    <div onClick={handleCardClick}>
+    <div onClick={handleClick}>
       <>
         <div className="pokemon-card">
           {pokemonData && (
@@ -41,14 +37,12 @@ const Card = ({ pokemonId }) => {
               <p>ID: {pokemonId}</p>
               <p>Name: {pokemonData.name}</p>
               <p>Types: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
-              {console.log(pokemonData)}
-
             </>
           )}
         </div>
       </>
       <>
-        {showDetails && (
+        {isVisible && (
           <CardDetails pokemonId={pokemonId} />
         )}
       </>
