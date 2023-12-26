@@ -1,7 +1,7 @@
 const express = require('express');
+const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const axios = require('axios');
 
 // Example route to test server
 app.get('/', (req, res) => {
@@ -13,7 +13,7 @@ app.listen(PORT, () => {
 });
 
 // Example route to fetch Pokemon data
-app.get('/api/pokemon/:id', async (req, res) => {
+app.get('/fetch-data', async (req, res) => {
     try {
         const { id } = req.params;
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
