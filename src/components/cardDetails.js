@@ -32,7 +32,7 @@ const CardDetails = ({ pokemonId }) => {
                             <div className="progress">
                                 <div
                                     className="progress-bar"
-                                    style={{ width: `${(stat.base_stat / 200) * 100}%` }}
+                                    style={{ width: `${(stat.base_stat / 150) * 100}%` }}
                                 >
                                 </div>
                             </div>
