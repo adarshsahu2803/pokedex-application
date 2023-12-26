@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../css/card.css'
-
-// import { useDispatch } from 'react-redux';
-// import { setSelectedPokemon } from '../actions';
-// import CardDetails from './CardDetails';
+import CardDetails from './CardDetails';
 
 const Card = ({ pokemonId }) => {
-  // const dispatch = useDispatch();
-  // const [showModal, setShowModal] = useState(false);
-
-  // const handleCardClick = () => {
-  //   dispatch(setSelectedPokemon(pokemon));
-  //   setShowModal(true);
-
   const [pokemonData, setPokemonData] = useState(null);
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,19 +20,38 @@ const Card = ({ pokemonId }) => {
     fetchData();
   }, [pokemonId]);
 
+  const handleCardClick = () => {
+    setShowDetails(true);
+  };
+
+  const handleCloseDetails = () => {
+    setShowDetails(false);
+  };
+
   return (
-    <div className="pokemon-card">
-      {pokemonData && (
-        <>
-          <img
-            src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonId}.svg`}
-            alt={pokemonData.name}
-          />
-          <p>ID: {pokemonId}</p>
-          <p>Name: {pokemonData.name}</p>
-          <p>Types: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
-        </>
-      )}
+    <div onClick={handleCardClick}>
+      <>
+        <div className="pokemon-card">
+          {pokemonData && (
+            <>
+              <img
+                src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonId}.svg`}
+                alt={pokemonData.name}
+              />
+              <p>ID: {pokemonId}</p>
+              <p>Name: {pokemonData.name}</p>
+              <p>Types: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
+              {console.log(pokemonData)}
+
+            </>
+          )}
+        </div>
+      </>
+      <>
+        {showDetails && (
+          <CardDetails pokemonId={pokemonId} />
+        )}
+      </>
     </div>
   );
 };
