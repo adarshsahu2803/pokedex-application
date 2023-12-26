@@ -8,14 +8,16 @@ function App() {
   const pokemonIds = [1, 2, 3, 4, 5];
 
   return (
-    <div>
-      <SearchBar />
+    <>
       <h1>Pokedex Application</h1>
-      {pokemonIds.map((id) => (
-        <Card key={id} pokemonId={id} />
-      ))}
+      <SearchBar />
+      <div className="card-container">
+        {pokemonIds.map((id) => (
+          <Card key={id} pokemonId={id} />
+        ))}
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }
 

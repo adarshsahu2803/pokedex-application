@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../css/card.css'
+
 // import { useDispatch } from 'react-redux';
 // import { setSelectedPokemon } from '../actions';
 // import CardDetails from './CardDetails';
