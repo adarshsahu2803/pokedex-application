@@ -4,7 +4,7 @@ import '../css/cardDetails.css'
 
 const CardDetails = ({ pokemonId }) => {
     const [pokemonStats, setPokemonStats] = useState([]);
-    const [pokemonName, setPokemonName] = useState('xxxxxx');
+    const [pokemonName, setPokemonName] = useState('pokemon');
 
     useEffect(() => {
         const fetchPokemonStats = async () => {
