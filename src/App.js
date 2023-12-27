@@ -1,7 +1,7 @@
 import './css/App.css';
 import Card from './components/Card.js';
 import SearchBar from './components/SearchBar.js';
-import Footer from './components/Footer.js';
+import TypeFilter from './components/TypeFilter.js';
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -20,7 +20,10 @@ function App() {
   return (
     <>
       <h1>Pokedex Application</h1>
-      <SearchBar />
+      <div className='task-bar'>
+        <SearchBar />
+        <TypeFilter />
+      </div>
       <InfiniteScroll
         className="card-container"
         dataLength={items.length}
@@ -34,7 +37,6 @@ function App() {
           </div>
         ))}
       </InfiniteScroll>
-      <Footer />
     </>
   )
 }
