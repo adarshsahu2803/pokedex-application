@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from './Card';
+import TypeList from './TypeList';
 
 const TypeFilter = ({ onSelectedType }) => {
     const [types, setTypes] = useState([]);
@@ -16,7 +16,6 @@ const TypeFilter = ({ onSelectedType }) => {
                 console.error('Error fetching types:', error);
             }
         };
-
         fetchTypes();
     }, []);
 
@@ -29,16 +28,21 @@ const TypeFilter = ({ onSelectedType }) => {
 
     return (
         <>
-            <div>
-                <label htmlFor="typeFilter">Select a Pokemon Type:</label>
-                <select id="typeFilter" value={selectedType} onChange={handleTypeChange}>
-                    <option value="">All</option>
-                    {types.map((type, index) => (
-                        <option key={index} value={type}>
-                            {type}
-                        </option>
-                    ))}
-                </select>
+            <div class="type-content">
+                <>
+                    <label htmlFor="typeFilter">Select a Pokemon Type:</label>
+                    <select id="typeFilter" value={selectedType} onChange={handleTypeChange}>
+                        <option value="">All</option>
+                        {types.map((type, index) => (
+                            <option key={index} value={type}>
+                                {type}
+                            </option>
+                        ))}
+                    </select>
+                </>
+                <>
+                    {/* <TypeList selectedType={selectedType} /> */}
+                </>
             </div>
         </>
     );
