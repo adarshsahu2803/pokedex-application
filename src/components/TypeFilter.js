@@ -24,6 +24,7 @@ const TypeFilter = ({ onSelectedType }) => {
         const selected = event.target.value;
         setSelectedType(selected);
         console.log(selected);
+        onSelectedType(selected); // Callback to parent component with selected type
     };
 
     return (

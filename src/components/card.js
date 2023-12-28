@@ -6,11 +6,13 @@ import CardDetails from './CardDetails';
 const Card = ({ pokemonId }) => {
   const [pokemonData, setPokemonData] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [pokemonID, setPokemonID] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`);
+        setPokemonID(response.data.id)
         setPokemonData(response.data);
       } catch (error) {
         console.error('Error fetching Pokemon data:', error);
@@ -31,10 +33,10 @@ const Card = ({ pokemonId }) => {
           {pokemonData && (
             <>
               <img
-                src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonId}.svg`}
+                src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonID}.svg`}
                 alt={pokemonData.name}
               />
-              <p>ID: {pokemonId}</p>
+              <p>ID: {pokemonID}</p>
               <p>Name: {pokemonData.name}</p>
               <p>Types: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
             </>
@@ -43,7 +45,7 @@ const Card = ({ pokemonId }) => {
       </>
       <>
         {isVisible && (
-          <CardDetails pokemonId={pokemonId} />
+          <CardDetails pokemonId={pokemonID} />
         )}
       </>
     </div>

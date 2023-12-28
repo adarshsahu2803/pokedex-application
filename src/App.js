@@ -4,9 +4,12 @@ import SearchBar from './components/SearchBar.js';
 import TypeFilter from './components/TypeFilter.js';
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from "react-infinite-scroll-component";
+import TypeList from './components/TypeList.js';
 
 function App() {
   const [items, setItems] = useState(Array.from({ length: 20 }));
+  const [type, setType] = useState(null);
+  const [typeGroup, setTypeGroup] = useState([]);
 
   const fetchMoreData = () => {
     // Simulating a fake async API call that adds 20 more records after 1.5 seconds
@@ -17,14 +20,20 @@ function App() {
 
   const pokemonIds = Array.from({ length: items.length }, (_, index) => index + 1);
 
+  const handleTypeChange = (selected) => {
+    console.log(selected);
+    setType(selected);
+  }
+
   return (
     <>
       <h1>Pokedex Application</h1>
       <div className='task-bar'>
         <SearchBar />
-        <TypeFilter />
+        <TypeFilter onSelectedType={handleTypeChange} />
       </div>
-      <InfiniteScroll
+      {<TypeList selectedType={type} />}
+      {/* <InfiniteScroll
         className="card-container"
         dataLength={items.length}
         next={fetchMoreData}
@@ -36,7 +45,7 @@ function App() {
             <Card key={id} pokemonId={id} />
           </div>
         ))}
-      </InfiniteScroll>
+      </InfiniteScroll> */}
     </>
   )
 }
