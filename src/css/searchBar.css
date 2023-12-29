@@ -2,3 +2,32 @@
     display: flex;
     justify-content: center;
 }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .search-bar input[type="text"] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

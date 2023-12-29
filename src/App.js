@@ -1,8 +1,9 @@
-import './css/App.css';
 import SearchBar from './components/SearchBar.js';
 import TypeFilter from './components/TypeFilter.js';
 import React, { useState } from 'react';
 import TypeList from './components/TypeList.js';
+import './css/App.css';
+import './css/taskBar.css';
 
 function App() {
   const [type, setType] = useState(null);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import TypeList from './TypeList';
+import '../css/typeFilter.css';
 
 const TypeFilter = ({ onSelectedType }) => {
     const [types, setTypes] = useState([]);
@@ -23,7 +23,7 @@ const TypeFilter = ({ onSelectedType }) => {
         const selected = event.target.value;
         setSelectedType(selected);
         console.log(selected);
-        onSelectedType(selected); // Callback to parent component with selected type
+        onSelectedType(selected); 
     };
 
     return (
@@ -39,9 +39,6 @@ const TypeFilter = ({ onSelectedType }) => {
                             </option>
                         ))}
                     </select>
-                </>
-                <>
-                    {/* <TypeList selectedType={selectedType} /> */}
                 </>
             </div>
         </>

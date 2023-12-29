@@ -30,7 +30,7 @@ const SearchBar = () => {
 
     return (
         <>
-            <div>
+            <div className="search-bar">
                 <input
                     type="text"
                     placeholder="Enter search term"

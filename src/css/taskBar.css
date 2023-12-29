@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.task-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: lightgray;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .task-bar {
+        flex-direction: column;
+    }
+}
