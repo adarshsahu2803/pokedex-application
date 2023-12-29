@@ -14,7 +14,12 @@ function App() {
 
   return (
     <>
-      <h1>Pokedex Application</h1>
+      <div className='app-head'>
+        <img
+          src={'/poke1.png'}
+          alt={'pokemon-logo'}
+        />
+      </div>
       <div className='task-bar'>
         <SearchBar />
         <TypeFilter onSelectedType={handleTypeChange} />

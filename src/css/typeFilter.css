@@ -1,20 +1,27 @@
-.type-content {
-    display: flex;
-    align-items: center;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Playfair+Display:ital@1&family=Poppins:wght@700&family=Roboto&display=swap');
 
-.type-content label {
-    margin-right: 10px;
-}
+  .type-content {
 
-.type-content select {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
+      display: flex;
+      align-items: center;
+  }
 
-@media (max-width: 768px) {
-    .type-content select {
-        width: 100%;
-    }
-}
+  .type-content label {
+      font-family: 'Merriweather', serif;
+      font-family: 'Playfair Display', serif;
+      font-family: 'Poppins', sans-serif;
+      font-family: 'Roboto', sans-serif;
+      margin-right: 10px;
+  }
+
+  .type-content select {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+  }
+
+  @media (max-width: 768px) {
+      .type-content select {
+          width: 100%;
+      }
+  }

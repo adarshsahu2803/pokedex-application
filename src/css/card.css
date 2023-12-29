@@ -1,7 +1,7 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  /* gap: 10px; */
   justify-content: center;
 }
 
@@ -12,14 +12,14 @@
   align-items: center;
   margin: 10px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 25px;
   border: 1px solid #ccc;
   height: 175px;
   width: 275px;
   cursor: pointer;
   text-align: center;
   transition: transform 0.3s ease-in-out;
-
+  background-color: lightgray;
 }
 
 .pokemon-details {
@@ -63,8 +63,9 @@
 
 .pokemon-type {
   display: flex;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 5px;
+  width: 55px;
+  border-radius: 25px;
   border: 1px solid #ccc;
   margin: 10px;
   background-color: #f9f9f9;
