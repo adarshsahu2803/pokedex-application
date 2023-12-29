@@ -26,23 +26,42 @@ const Card = ({ pokemonId }) => {
     setIsVisible(!isVisible);
   }
 
+  const formatPokemonId = (id) => {
+    const formattedId = String(id).padStart(3, '0');
+    return `#${formattedId}`;
+  };
+
+  function capitalizeFirstLetter(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
   return (
     <div onClick={handleClick}>
-      <>
-        <div className="pokemon-card">
-          {pokemonData && (
-            <>
+      <div className="pokemon-card">
+        {pokemonData && (
+          <>
+            <div className="pokemon-details">
+              <h2>{capitalizeFirstLetter(pokemonData.name)}</h2>
+              <h4 className='type-list'>
+                {pokemonData.types.map((type, index) => (
+                  <React.Fragment key={index}>
+                    <span className='pokemon-type'>
+                      {capitalizeFirstLetter(type.type.name)}
+                    </span>
+                  </React.Fragment>
+                ))}
+              </h4>
+            </div>
+            <div className='pokemon-id-img'>
+              <h1>{formatPokemonId(pokemonID)}</h1>
               <img
                 src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonID}.svg`}
                 alt={pokemonData.name}
               />
-              <p>ID: {pokemonID}</p>
-              <p>Name: {pokemonData.name}</p>
-              <p>Types: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
-            </>
-          )}
-        </div>
-      </>
+            </div>
+          </>
+        )}
+      </div>
       <>
         {isVisible && (
           <CardDetails pokemonId={pokemonID} />
