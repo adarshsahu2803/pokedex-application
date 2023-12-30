@@ -10,7 +10,6 @@ import './css/taskBar.css';
 function Home() {
     const [type, setType] = useState(null);
     const navigate = useNavigate();
-    const searchBarRef = useRef(null);
     const typeFilterRef = useRef();
     const [searchInput, setSearchInput] = useState('');
     const [searchVisibility, setSearchVisibility] = useState(false);
@@ -25,7 +24,7 @@ function Home() {
 
     const handleLogoClick = () => {
         setSearchInput('');
-        setType(null);
+        setType(null || 'All');
         navigate('/');
         setSearchVisibility(false);
     }
@@ -41,7 +40,7 @@ function Home() {
             </div>
             <div className='task-bar'>
                 <SearchBar setSearchVisibility={setSearchVisibility} value={searchInput} handleSearchInputChange={handleSearchInputChange} />
-                <TypeFilter ref={typeFilterRef} onSelectedType={handleTypeChange} selectedType={type} />
+                <TypeFilter ref={typeFilterRef} onSelectedType={handleTypeChange} value={type} />
             </div>
             <div class="search-element">
                 {searchVisibility && <Card pokemonId={searchInput.toLowerCase()} />}

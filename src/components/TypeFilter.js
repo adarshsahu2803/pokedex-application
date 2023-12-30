@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../css/typeFilter.css';
 
-const TypeFilter = ({ onSelectedType, onReset }) => {
+const TypeFilter = ({ onSelectedType, value }) => {
     const [types, setTypes] = useState([]);
-    const [selectedType, setSelectedType] = useState('');
 
     useEffect(() => {
         const fetchTypes = async () => {
@@ -21,13 +20,7 @@ const TypeFilter = ({ onSelectedType, onReset }) => {
 
     const handleTypeChange = (event) => {
         const selected = event.target.value;
-        setSelectedType(selected);
-        console.log(selected);
         onSelectedType(selected);
-    };
-
-    const reset = () => {
-        setSelectedType('');
     };
 
     return (
@@ -35,7 +28,7 @@ const TypeFilter = ({ onSelectedType, onReset }) => {
             <div class="type-content">
                 <>
                     <label htmlFor="typeFilter">Select a Pokemon Type:</label>
-                    <select id="typeFilter" value={selectedType} onChange={handleTypeChange}>
+                    <select id="typeFilter" value={value} onChange={handleTypeChange}>
                         <option value="">All</option>
                         {types.map((type, index) => (
                             <option key={index} value={type}>
