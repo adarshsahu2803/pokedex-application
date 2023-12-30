@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './router/Home.js';
+import Home from './Home.js';
 import './css/Home.css';
 import './css/taskBar.css';
 
