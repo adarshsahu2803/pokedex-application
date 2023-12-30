@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../css/typeFilter.css';
 
-const TypeFilter = ({ onSelectedType }) => {
+const TypeFilter = ({ onSelectedType, onReset }) => {
     const [types, setTypes] = useState([]);
     const [selectedType, setSelectedType] = useState('');
 
@@ -23,7 +23,11 @@ const TypeFilter = ({ onSelectedType }) => {
         const selected = event.target.value;
         setSelectedType(selected);
         console.log(selected);
-        onSelectedType(selected); 
+        onSelectedType(selected);
+    };
+
+    const reset = () => {
+        setSelectedType('');
     };
 
     return (

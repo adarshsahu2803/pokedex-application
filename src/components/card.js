@@ -9,7 +9,7 @@ const Card = ({ pokemonId }) => {
   const [pokemonID, setPokemonID] = useState(0);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async () => {      
       try {
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`);
         setPokemonID(response.data.id)
