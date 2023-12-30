@@ -7,9 +7,6 @@
   }
 
   .type-content label {
-      font-family: 'Merriweather', serif;
-      font-family: 'Playfair Display', serif;
-      font-family: 'Poppins', sans-serif;
       font-family: 'Roboto', sans-serif;
       margin-right: 10px;
   }
@@ -22,6 +19,12 @@
 
   @media (max-width: 768px) {
       .type-content select {
-          width: 100%;
+          width: 50%;
+      }
+
+      .type-content label {
+          font-family: 'Roboto', sans-serif;
+          margin-right: -10px;
+          font-size: 14px;
       }
   }

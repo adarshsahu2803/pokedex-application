@@ -79,8 +79,25 @@
   }
 
   .pokemon-card img {
-    width: 100px;
+    width: 65px;
     height: 100px;
+  }
+
+  .pokemon-details {
+    width: 100px;
+    height: 160px;
+    font-size: 12px;
+    margin-left: -30px;
+  }
+
+  .pokemon-id-img {
+    margin: -40px;
+  }
+
+  .pokemon-id-img h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
   }
 }
 
