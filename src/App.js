@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './Home.js';
+import Home from './router/Home';
 import './css/Home.css';
 import './css/taskBar.css';
 
