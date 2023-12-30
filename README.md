@@ -9,6 +9,7 @@ Welcome to the Pokedex application, a state-of-the-art platform that allows user
 - **Interactive Pokémon Cards:** Display Pokémon details, including names, images, types, and IDs.
 - **Pokémon Detail Modal:** Explore detailed statistics of each Pokémon in a modal dialog.
 - **Real-time Type Filter:** Filter Pokémon based on their types with live results.
+- **Reset on Application Logo Click:** Clicking the application logo resets the application, undoing any search results or filter changes.
 
 ## Technologies Used
 
@@ -43,6 +44,9 @@ To start the application locally:
 ```
 
 Visit http://localhost:3000 in your web browser to view the application.
+
+## Deployment
+The application has been deployed using GitHub Pages. Access it [here](https://adarshsahu2803.github.io/pokedex-application).
 
 ## API Integration
 The application integrates with the Pokémon API to fetch Pokémon data. Ensure a stable internet connection to retrieve real-time data from the API.
