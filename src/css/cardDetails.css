@@ -4,55 +4,76 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 9999;
+    align-items: center;
+    z-index: 1000;
 }
 
 .modal {
-    background-color: #fff;
+    background: #fff;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 8px;
     max-width: 80%;
-    max-height: 80%;
-    overflow: auto;
-    position: relative;
+    width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stats-container {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .stat {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    /* Align stat items vertically */
+    background: lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 25px;
+    /* Gap between stat name and value */
 }
+
+.stat p:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    width: 120px;
+    /* Fixed width for stat name */
+    text-align: right;
+    /* Align text to the right for uniformity */
+    color: #333333;
+}
+
+.stat p:last-child {
+    margin: 0;
+    font-weight: bold;
+    color: #444444;
+}
+
 
 .progress {
-    width: 100%;
+    display: flex;
+    align-items: center; /* Align progress bar vertically */
     height: 20px;
-    /* Adjust height as needed */
-    background-color: #ccc;
-    /* Background color of the progress container */
-}
+    background: #f5f5f5;
+    border-radius: 5px;
+    flex-grow: 1; /* Allow progress bar to grow within container */
+    margin-left: 0px; /* Spacing between stat value and progress bar */
+    overflow: hidden; /* Hide overflow */
+  }
 
-.progress-bar {
+  .progress-bar {
     height: 100%;
-    background-color: #007bff;
-    /* Color of the progress bar */
-    /* Other necessary styling */
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #888;
-}
-
-@media screen and (max-width: 768px) {}
+    transition: width 0.6s ease;
+    background: linear-gradient(to right, #e3a446, #b95814); 
+  }

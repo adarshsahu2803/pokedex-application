@@ -20,14 +20,22 @@ const CardDetails = ({ pokemonId }) => {
         fetchPokemonStats();
     }, [pokemonId]);
 
+    function capitalizeFirstLetter(word) {
+        let words = word.split('-');
+        for (let i = 0; i < words.length; i++) {
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+        return words.join(' ');
+    }
+
     return (
         <div className="modal-overlay">
             <div className="modal">
-                <h2>{pokemonName} stats</h2>
+                <h2>{capitalizeFirstLetter(pokemonName)} Stats</h2>
                 <div className="stats-container">
                     {pokemonStats.map((stat, index) => (
                         <div key={index} className="stat">
-                            <p>{stat.stat.name}</p>
+                            <p>{capitalizeFirstLetter(stat.stat.name)}</p>
                             <p>{stat.base_stat}</p>
                             <div className="progress">
                                 <div

@@ -24,7 +24,7 @@ function Home() {
 
     const handleLogoClick = () => {
         setSearchInput('');
-        setType(null || 'All');
+        setType('');
         navigate('/');
         setSearchVisibility(false);
     }
