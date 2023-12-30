@@ -1,11 +1,11 @@
-import SearchBar from './components/SearchBar.js';
-import TypeFilter from './components/TypeFilter.js';
+import SearchBar from '../components/SearchBar.js';
+import TypeFilter from '../components/TypeFilter.js';
 import React, { useState, useRef } from 'react';
-import TypeList from './components/TypeList.js';
-import Card from './components/Card.js';
+import TypeList from '../components/TypeList.js';
+import Card from '../components/Card.js';
 import { useNavigate } from 'react-router-dom';
-import './css/Home.css';
-import './css/taskBar.css';
+import '../css/Home.css';
+import '../css/taskBar.css';
 
 function Home() {
     const [type, setType] = useState(null);
