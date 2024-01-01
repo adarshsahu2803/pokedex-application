@@ -26,7 +26,6 @@ const Card = ({ pokemonId }) => {
     const fetchColor = async () => {
       try {
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`);
-        console.log(response.data.color.name);
         setColor(response.data.color.name);
       } catch (error) {
         console.error('Error fetching Pokemon color:', error);

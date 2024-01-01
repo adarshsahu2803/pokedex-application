@@ -9,6 +9,7 @@ const SearchBar = ({ setSearchVisibility, value, handleSearchInputChange }) => {
 
     const handleSearch = () => {
         setSearchVisibility(true);
+        console.log("clicked");
     };
 
     return (
