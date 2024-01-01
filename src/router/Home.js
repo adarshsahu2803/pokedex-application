@@ -2,6 +2,7 @@ import SearchBar from '../components/SearchBar.js';
 import TypeFilter from '../components/TypeFilter.js';
 import React, { useState, useRef } from 'react';
 import TypeList from '../components/TypeList.js';
+import Card from '../components/Card.js';
 import { useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 import '../css/taskBar.css';
@@ -42,7 +43,7 @@ function Home() {
                 <TypeFilter ref={typeFilterRef} onSelectedType={handleTypeChange} value={type} />
             </div>
             <div class="search-element">
-                {searchVisibility && <card pokemonId={searchInput.toLowerCase()} />}
+                {searchVisibility && <Card pokemonId={searchInput.toLowerCase()} />}
             </div>
             <TypeList selectedType={type || ''} />
         </>
