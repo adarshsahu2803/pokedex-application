@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import Card from './Card';
+import card from './card';
 import InfiniteScroll from "react-infinite-scroll-component";
 import '../css/card.css';
 
-const TypeList = ({ selectedType }) => {
+const typeList = ({ selectedType }) => {
     const [pokemonGroup, setPokemonGroup] = useState([]);
     const [items, setItems] = useState([]);
     let [startIndex, setStartIndex] = useState(items.length);
@@ -58,7 +58,7 @@ const TypeList = ({ selectedType }) => {
             >
                 {items.map((pokemonName, index) => (
                     <div key={index}>
-                        <Card key={index} pokemonId={pokemonName} />
+                        <card key={index} pokemonId={pokemonName} />
                     </div>
                 ))}
             </InfiniteScroll>
@@ -66,4 +66,4 @@ const TypeList = ({ selectedType }) => {
     );
 };
 
-export default TypeList;
+export default typeList;
