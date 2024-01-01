@@ -1,6 +1,6 @@
 import '../css/searchBar.css';
 
-const searchBar = ({ setSearchVisibility, value, handleSearchInputChange }) => {
+const SearchBar = ({ setSearchVisibility, value, handleSearchInputChange }) => {
 
     const handleInputChange = (event) => {
         const inputValue = event.target.value;
@@ -24,4 +24,4 @@ const searchBar = ({ setSearchVisibility, value, handleSearchInputChange }) => {
     );
 };
 
-export default searchBar;
+export default SearchBar;
