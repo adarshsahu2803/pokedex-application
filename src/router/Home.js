@@ -1,5 +1,7 @@
 import SearchBar from '../components/SearchBar.js';
 import TypeFilter from '../components/TypeFilter.js';
+import SearchBar from '../components/SearchBar.js';
+import TypeFilter from '../components/TypeFilter.js';
 import React, { useState, useRef } from 'react';
 import TypeList from '../components/TypeList.js';
 import { useNavigate } from 'react-router-dom';
@@ -32,7 +34,7 @@ function Home() {
         <>
             <div className='app-head'>
                 <img
-                    src={'/poke1.png'}
+                    src={logoImg}
                     alt={'pokemon-logo'}
                     onClick={handleLogoClick}
                 />
@@ -42,7 +44,7 @@ function Home() {
                 <TypeFilter ref={typeFilterRef} onSelectedType={handleTypeChange} value={type} />
             </div>
             <div class="search-element">
-                {searchVisibility && <card pokemonId={searchInput.toLowerCase()} />}
+                {searchVisibility && <Card pokemonId={searchInput.toLowerCase()} />}
             </div>
             <TypeList selectedType={type || ''} />
         </>
