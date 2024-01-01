@@ -6,6 +6,7 @@ import Card from '../components/Card.js';
 import { useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 import '../css/taskBar.css';
+import logoImg from '../assets/poke1.png'
 
 function Home() {
     const [type, setType] = useState(null);
@@ -33,7 +34,7 @@ function Home() {
         <>
             <div className='app-head'>
                 <img
-                    src={'/poke1.png'}
+                    src={logoImg}
                     alt={'pokemon-logo'}
                     onClick={handleLogoClick}
                 />
