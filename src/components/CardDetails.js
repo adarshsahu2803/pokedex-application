@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../css/cardDetails.css'
 
-const cardDetails = ({ pokemonId }) => {
+const CardDetails = ({ pokemonId }) => {
     const [pokemonStats, setPokemonStats] = useState([]);
     const [pokemonName, setPokemonName] = useState('pokemon');
 
@@ -52,4 +52,4 @@ const cardDetails = ({ pokemonId }) => {
     );
 };
 
-export default cardDetails;
+export default CardDetails;
