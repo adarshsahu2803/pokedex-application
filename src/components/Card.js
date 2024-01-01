@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../css/card.css'
-import cardDetails from './cardDetails';
+import CardDetails from './CardDetails';
 
-const card = ({ pokemonId }) => {
+const Card = ({ pokemonId }) => {
   const [pokemonData, setPokemonData] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const [pokemonID, setPokemonID] = useState(0);
@@ -64,11 +64,11 @@ const card = ({ pokemonId }) => {
       </div>
       <>
         {isVisible && (
-          <cardDetails pokemonId={pokemonID} />
+          <CardDetails pokemonId={pokemonID} />
         )}
       </>
     </div>
   );
 };
 
-export default card;
+export default Card;
