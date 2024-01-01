@@ -1,8 +1,8 @@
-import SearchBar from './components/SearchBar.js';
-import TypeFilter from './components/TypeFilter.js';
+import searchBar from './components/searchBar.js';
+import typeFilter from './components/typeFilter.js';
 import React, { useState, useRef } from 'react';
-import TypeList from './components/TypeList.js';
-import Card from './components/Card.js';
+import typeList from './components/typeList.js';
+import card from './components/card.js';
 import { useNavigate } from 'react-router-dom';
 import './css/Home.css';
 import './css/taskBar.css';
@@ -39,13 +39,13 @@ function Home() {
                 />
             </div>
             <div className='task-bar'>
-                <SearchBar setSearchVisibility={setSearchVisibility} value={searchInput} handleSearchInputChange={handleSearchInputChange} />
-                <TypeFilter ref={typeFilterRef} onSelectedType={handleTypeChange} value={type} />
+                <searchBar setSearchVisibility={setSearchVisibility} value={searchInput} handleSearchInputChange={handleSearchInputChange} />
+                <typeFilter ref={typeFilterRef} onSelectedType={handleTypeChange} value={type} />
             </div>
             <div class="search-element">
-                {searchVisibility && <Card pokemonId={searchInput.toLowerCase()} />}
+                {searchVisibility && <card pokemonId={searchInput.toLowerCase()} />}
             </div>
-            <TypeList selectedType={type || ''} />
+            <typeList selectedType={type || ''} />
         </>
     )
 }

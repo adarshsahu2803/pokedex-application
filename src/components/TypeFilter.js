@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../css/typeFilter.css';
 
-const TypeFilter = ({ onSelectedType, value }) => {
+const typeFilter = ({ onSelectedType, value }) => {
     const [types, setTypes] = useState([]);
 
     useEffect(() => {
@@ -42,4 +42,4 @@ const TypeFilter = ({ onSelectedType, value }) => {
     );
 };
 
-export default TypeFilter;
+export default typeFilter;
