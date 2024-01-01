@@ -56,21 +56,14 @@ The application integrates with the Pokémon API to fetch Pokémon data. Ensure 
 ```lua
 |-- public/
 |-- src/
+    |-- assets/
+    |-- css/
     |-- components/
         |-- Card.js
         |-- CardDetails.js
-        |-- Loading.js
         |-- SearchBar.js
         |-- TypeFilter.js
         |-- TypeList.js
-    |-- css/
-        |-- card.css    
-        |-- cardDetails.css    
-        |-- Home.css    
-        |-- index.css    
-        |-- searchBar.css    
-        |-- taskBar.css    
-        |-- typeFilter.css
     |-- router/
         |-- Home.js
     |-- App.js
