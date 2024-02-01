@@ -53,28 +53,6 @@ The application has been deployed using Netify. Access it [here](https://pokedex
 ## API Integration
 The application integrates with the Pokémon API to fetch Pokémon data. Ensure a stable internet connection to retrieve real-time data from the API.
 
-## Project Structure
-
-```lua
-|-- public/
-|-- src/
-    |-- assets/
-    |-- css/
-    |-- components/
-        |-- Card.js
-        |-- CardDetails.js
-        |-- SearchBar.js
-        |-- TypeFilter.js
-        |-- TypeList.js
-    |-- router/
-        |-- Home.js
-    |-- App.js
-    |-- index.js
-|-- package.json
-|-- README.md
-
-```
-
 ## Contributing
 Contributions are welcome! Feel free to fork the repository and submit pull requests to suggest improvements or additional features.
 
